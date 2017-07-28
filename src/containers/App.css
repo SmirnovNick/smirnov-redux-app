@@ -18,6 +18,12 @@
   font-size: large;
 }
 
+.Input-data{
+  margin-left: 25%;
+  text-align: left;
+  border: 1px solid black;
+  width: 50%;
+}
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
