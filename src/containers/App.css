@@ -18,12 +18,27 @@
   font-size: large;
 }
 
-.Input-data{
+.Input-data, .Input-data-header{
   margin-left: 25%;
   text-align: left;
   border: 1px solid black;
   width: 50%;
+  padding: 5px;
 }
+
+.Input-data{
+  margin-top: 0px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.Input-data-header{
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom: 0px;
+}
+
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

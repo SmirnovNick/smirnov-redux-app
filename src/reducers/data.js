@@ -34,6 +34,59 @@ const initialState = { data:[
   };
 
 
-export default function data(state = initialState) {
-  return state
+export default function data(state = initialState, action) {
+  switch (action.type) {
+
+    case 'ADD_NODE':
+
+      return {
+        data: [
+          ...state.data,
+          {
+            id: action.id,
+            title: action.title,
+            parent: action.parent
+          }
+        ]
+      }
+      
+    case 'DELETE_NODE':
+
+      return {
+        data: state.data.filter(function(value){return this.id !== value.id;},{id : action.id})
+      }
+
+    default:
+      return state;
+
+  }
+}
+
+
+
+
+
+
+
+
+
+ function friends(state = initialState, action) {
+  switch (action.type) {
+
+    case 's':
+      const newId = state.friends[state.friends.length-1] + 1;
+      return {
+        friends: state.friends.concat(newId),
+        friendsById: {
+          ...state.friendsById,
+          [newId]: {
+            id: newId,
+            name: action.name
+          }
+        }
+      }
+
+    default:
+      return state;
+  }
 }
