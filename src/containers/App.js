@@ -6,17 +6,14 @@ import Data from '../components/Data';
 import Tree from '../components/Tree';
 import InputForm from '../components/InputForm';
 import './App.css';
-import getTree from '../getTreeOLD';
+
 
 import * as dataActions from '../actions/DataActions'
 
 class App extends Component {
   render() {
     const { addNode, deleteNode } = this.props.dataActions
-    var srt1 = getTree(this.props.data) // (1)//test
-console.log(srt1)
 
-    //console.log(srt1);//test
     return (
       <div className="App">
         <div className="App-header">
