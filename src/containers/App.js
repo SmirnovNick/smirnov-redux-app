@@ -6,14 +6,14 @@ import Data from '../components/Data';
 import Tree from '../components/Tree';
 import InputForm from '../components/InputForm';
 import './App.css';
-
+import GetTree from '../GetTreeNEW';
 
 import * as dataActions from '../actions/DataActions'
 
 class App extends Component {
   render() {
     const { addNode, deleteNode } = this.props.dataActions
-
+    GetTree(this.props.data);
     return (
       <div className="App">
         <div className="App-header">
