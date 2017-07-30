@@ -13,14 +13,16 @@ export default class InputForm extends Component {
 
 
   handleSubmit (e) {
-      this.props.addNode(parseInt(this.state.id),this.state.title,parseInt(this.state.parent));
+
+      let parent = (this.state.parent === null ? null : parseInt(this.state.parent, 10));
+      this.props.addNode(parseInt(this.state.id, 10),this.state.title,parent);
       this.setState({
         id: this.props.data.length + 1,
         title: "Untilted",
         parent: null
       });
 
-}
+    }
 
   handleChange(e) {
 
@@ -38,15 +40,16 @@ export default class InputForm extends Component {
     return <div>
         <input
           placeholder="ID"
-          type='number'
+
           name='id'
           className='Form-element'
           onChange={this.handleChange.bind(this)}
-          value={this.props.id}
+          value={this.state.id}
+          readOnly
         />
         <input
           placeholder="Parent"
-          type='text'
+          type='number'
           name='parent'
           className='Form-element'
           onChange={this.handleChange.bind(this)}

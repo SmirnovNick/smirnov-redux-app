@@ -38,7 +38,75 @@
   border-bottom: 0px;
 }
 
+.Form-element:first-child{
+  width: 5.5%;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  margin-left: 1%;
+}
 
+.Form-element:nth-child(2){
+  width: 7%;
+}
+
+.Form-element:nth-child(3){
+  margin-top: 10px;
+  width: 25%;
+}
+
+.Form-element:last-child{
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  height: 34px;
+  border-right: 1px solid black;
+  -webkit-transition: .5s ease-out;
+  -o-transition: .5s ease-out;
+  -moz-transition: .5s ease-out;
+  transition: .5s ease-out;
+}
+
+.Form-element:last-child:hover{
+  background-color: #dddddd;
+}
+
+.Form-element:last-child:active{
+  background-color: #cccccc;
+}
+
+.Form-element{
+  text-align: center;
+  height: 34px;
+  width: 12.5%;
+  margin: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 30px;
+  background-color: white;
+  border: 1px solid black;
+  border-right: 0px solid black;
+}
+
+.Tree li{
+  list-style-type: none;
+}
+.delete{
+
+  opacity: 0.5;
+  color: red;
+}
+.delete:hover{
+  opacity: 1;
+  color: red;
+}
+.Tree{
+
+  padding: 5px;
+  margin-left: 25%;
+  text-align: left;
+  width: 50%;
+  margin-bottom: 10px;
+
+}
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
