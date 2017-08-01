@@ -23,13 +23,13 @@ class App extends Component {
           <InputForm data={this.props.data} addNode={addNode}/>
           <Tree data={this.props.data} deleteNode={deleteNode}/>
           <Data data={this.props.data}/>
-
       </div>
     );
   }
 }
 
 function mapStateToProps (state) {
+  console.log(state)
   return {
     data: state.data
   }

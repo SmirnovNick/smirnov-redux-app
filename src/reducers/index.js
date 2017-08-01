@@ -53,7 +53,8 @@ export default function data(state = initialState, action) {
     case 'DELETE_NODE':
 
       return {
-        data: state.data.filter(function(value){return this.id !== value.id;},{id : action.id})
+        data: state.data.filter(
+          (value) => { return action.id !== value.id;})
       }
 
     default:

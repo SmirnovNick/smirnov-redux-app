@@ -2,36 +2,24 @@ import getTree from './getTreeOLD';
 
 
 
-export default function GetTree(array, parentsID = []) {
-  var tqwerty = getTree(array);
-  var parents = {};
+export default function GetTree(array) {
+  let parents = {};
 
-  for (var i = 0; i < array.length; i++) {
-    if (!parentsID.includes(array[i]['parent'])){
-      parentsID.push(array[i]['parent']);
-      let rrrr = parseInt(array[i]['id']);
-      Object.defineProperty(parents, array[i]['parent'], {value :  [{
-        id:array[i]['id'],
-        title:array[i]['title'],
-        level: 0,
-        child: parents[array[i]['id']]
-      }]});
-    } else {
-        parents[array[i]['parent']].push({
-          id:parseInt(array[i]['id']),
-          title:array[i]['title'],
-          level: 0,
-          child: parents[array[i]['id']]
-        });
-
-
+  const getNode = (id) => {
+    if (typeof parents[id] === 'undefined') {
+      parents[id]  = {
+        children: [],
+      };
+    }
+    return parents[id];
   }
-var output = parents[null];
 
+  for (let item of array) {
+    let node = getNode(item.id);
+    node = { ...node, ...item };
+    let parent = getNode(item.parent);
+    parent.children.push(node);
+  }
 
-}
-console.log('------ID Родителей------');
-
-console.log(tqwerty);
-console.log(output);
+  return parents[null];
 }
